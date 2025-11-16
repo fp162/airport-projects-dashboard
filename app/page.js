@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { RefreshCw, Download, MapPin, Search } from 'lucide-react';
+import { Download, Search } from 'lucide-react';
 
 // Sample data - will be replaced with Google Sheets API later
 const sampleData = [
@@ -173,27 +173,16 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50 flex">
       {/* Sidebar */}
       <div className="w-64 bg-white border-r border-gray-200 p-6 fixed h-full overflow-y-auto">
-        <h2 className="text-lg font-semibold text-gray-800 mb-4">⚙️ Data Controls</h2>
-        
-        <button 
-          onClick={() => window.location.reload()}
-          className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors mb-6"
-        >
-          <RefreshCw className="w-4 h-4" />
-          Refresh Data
-        </button>
-
-        <hr className="my-6 border-gray-200" />
-
-        <h3 className="text-sm font-semibold text-gray-800 mb-2">📊 About</h3>
-        <p className="text-xs text-gray-600 mb-6">
+        <h2 className="text-lg font-semibold text-gray-800 mb-4">📊 About</h2>
+        <p className="text-sm text-gray-600 mb-6">
           This dashboard displays airport project data from the connected Google Sheet.
         </p>
 
         <hr className="my-6 border-gray-200" />
 
+        <h3 className="text-sm font-semibold text-gray-800 mb-2">ℹ️ Info</h3>
         <p className="text-xs text-gray-500">
-          💡 Tip: Add Latitude and Longitude columns to your sheet for map visualization
+          Data is automatically updated once daily.
         </p>
       </div>
 
@@ -271,16 +260,6 @@ export default function Home() {
                 📊 Data Table
               </button>
               <button
-                onClick={() => setActiveTab('map')}
-                className={`px-6 py-3 font-medium border-b-2 transition-colors ${
-                  activeTab === 'map'
-                    ? 'border-blue-600 text-blue-600'
-                    : 'border-transparent text-gray-600 hover:text-gray-900'
-                }`}
-              >
-                🗺️ Map View
-              </button>
-              <button
                 onClick={() => setActiveTab('analytics')}
                 className={`px-6 py-3 font-medium border-b-2 transition-colors ${
                   activeTab === 'analytics'
@@ -338,34 +317,6 @@ export default function Home() {
                     </tbody>
                   </table>
                 </div>
-              </div>
-            )}
-
-            {/* Map View Tab */}
-            {activeTab === 'map' && (
-              <div>
-                <h2 className="text-xl font-semibold text-gray-900 mb-4">Map View</h2>
-                
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
-                  <p className="text-sm text-blue-900">
-                    <strong>Note:</strong> Interactive map will be integrated using Mapbox or Google Maps API.
-                  </p>
-                </div>
-
-                <div className="relative bg-gray-100 rounded-lg overflow-hidden" style={{height: '500px'}}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                      <p className="text-gray-600 font-medium">Interactive Map Visualization</p>
-                      <p className="text-gray-500 text-sm mt-2">Projects will appear here with coordinates</p>
-                      <p className="text-gray-500 text-sm mt-2">{filteredData.length} projects ready to display</p>
-                    </div>
-                  </div>
-                </div>
-
-                <p className="text-sm text-gray-600 mt-4">
-                  📍 {filteredData.length} projects available for mapping
-                </p>
               </div>
             )}
 
