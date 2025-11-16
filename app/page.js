@@ -7,93 +7,224 @@ import { Download, Search } from 'lucide-react';
 const sampleData = [
   {
     id: 1,
-    dateFetched: '2024-11-10',
-    datePublished: '2024-11-01',
-    airportName: 'Heathrow Airport',
-    projectName: 'Terminal 3 Expansion',
-    description: 'Major expansion of Terminal 3 facilities',
-    status: 'In Progress',
-    city: 'London',
-    country: 'United Kingdom',
-    estimatedCompletion: '2026-Q2',
-    cost: '£450M',
-    summary: 'Expanding capacity by 25%',
-    sourceUrl: 'https://example.com/heathrow',
-    relevance: 'High',
-    latitude: 51.4700,
-    longitude: -0.4543
+    'Date Fetched': '2025-11-07',
+    'Date Published': '2025-11-04',
+    'Airport Name': 'Techo International Airport',
+    'Project Name': 'Techo International Airport Construction',
+    'Description': 'The project involves the construction of a new airport in Phnom Penh, Cambodia, under a phased expansion plan.',
+    'Status': 'Completed',
+    'City': 'Phnom Penh',
+    'Country': 'Cambodia',
+    'Estimated Completion': 'N/A',
+    'Cost (N/A if it is not present in article)': 'N/A',
+    'Summary': 'The new Techo International Airport has been inaugurated by the Cambodian Prime Minister, marking a significant development in the country\'s aviation infrastructure.',
+    'Source URL': 'https://www.ainonline.com/aviation-news/air-transport/2025-11-04/cambodian-prime-minister-inaugurates-new-airport-phnom-penh',
+    'Relevance': 'High',
+    'Impact Summary': 'The new airport is expected to improve air travel services and boost the local economy in Phnom Penh, Cambodia.'
   },
   {
     id: 2,
-    dateFetched: '2024-11-12',
-    datePublished: '2024-10-28',
-    airportName: 'JFK International',
-    projectName: 'New Terminal One',
-    description: 'Construction of state-of-the-art terminal',
-    status: 'Planning',
-    city: 'New York',
-    country: 'United States',
-    estimatedCompletion: '2028-Q4',
-    cost: '$9.5B',
-    summary: 'World-class terminal facility',
-    sourceUrl: 'https://example.com/jfk',
-    relevance: 'High',
-    latitude: 40.6413,
-    longitude: -73.7781
+    'Date Fetched': '2025-11-07',
+    'Date Published': '2025-11-06',
+    'Airport Name': 'Van Nuys Airport',
+    'Project Name': 'Taxiway Repairs',
+    'Description': 'The $19 million project involves repairs to taxiways, resulting in overnight runway closures through February.',
+    'Status': 'In Progress',
+    'City': 'Van Nuys',
+    'Country': 'USA',
+    'Estimated Completion': 'February 2026',
+    'Cost (N/A if it is not present in article)': '$19 million',
+    'Summary': 'Taxiway repairs at Van Nuys Airport are underway, causing overnight runway closures through February, as part of a $19 million project.',
+    'Source URL': 'https://www.ainonline.com/aviation-news/business-aviation/2025-11-05/taxiway-repairs-spur-overnight-runway-closures-kvny',
+    'Relevance': 'Medium',
+    'Impact Summary': 'The project affects airport operations, causing overnight runway closures through February.'
   },
   {
     id: 3,
-    dateFetched: '2024-11-13',
-    datePublished: '2024-11-05',
-    airportName: 'Dubai International',
-    projectName: 'Runway Enhancement',
-    description: 'Upgrading runway systems and lighting',
-    status: 'Completed',
-    city: 'Dubai',
-    country: 'United Arab Emirates',
-    estimatedCompletion: '2024-Q3',
-    cost: '$120M',
-    summary: 'Enhanced safety and efficiency',
-    sourceUrl: 'https://example.com/dubai',
-    relevance: 'Medium',
-    latitude: 25.2532,
-    longitude: 55.3657
+    'Date Fetched': '2025-11-07',
+    'Date Published': '2025-11-04',
+    'Airport Name': 'Hong Kong International Airport',
+    'Project Name': 'Three-runway System',
+    'Description': 'The Three-runway System is one of the biggest infrastructure projects in Hong Kong\'s history, laying the foundation for long-term growth and development of intermodal services.',
+    'Status': 'In Progress',
+    'City': 'Hong Kong',
+    'Country': 'China',
+    'Estimated Completion': 'N/A',
+    'Cost (N/A if it is not present in article)': 'N/A',
+    'Summary': 'The Three-runway System project at Hong Kong International Airport aims to enhance the airport\'s infrastructure and intermodal services, driving growth and development in the region.',
+    'Source URL': 'https://aviationweek.com/air-transport/super-terminal-expo-2025-opens-grand-ceremony-creating-new-milestones-asian',
+    'Relevance': 'High',
+    'Impact Summary': 'The project is expected to drive long-term growth and development in the region, enhancing the airport\'s infrastructure and intermodal services.'
   },
   {
     id: 4,
-    dateFetched: '2024-11-14',
-    datePublished: '2024-11-08',
-    airportName: 'Changi Airport',
-    projectName: 'Terminal 5 Construction',
-    description: 'New terminal to increase capacity',
-    status: 'In Progress',
-    city: 'Singapore',
-    country: 'Singapore',
-    estimatedCompletion: '2030-Q1',
-    cost: '$3.5B',
-    summary: 'Adding 50M passenger capacity',
-    sourceUrl: 'https://example.com/changi',
-    relevance: 'High',
-    latitude: 1.3644,
-    longitude: 103.9915
+    'Date Fetched': '2025-11-10',
+    'Date Published': '2025-11-09',
+    'Airport Name': 'Sardar Vallabhbhai Patel International Airport (SVPI)',
+    'Project Name': 'New Parallel Taxiway Construction',
+    'Description': 'The construction of a new parallel taxiway for Code C aircraft to enhance ground handling efficiency and reduce delays at Ahmedabad Airport.',
+    'Status': 'In Progress',
+    'City': 'Ahmedabad',
+    'Country': 'India',
+    'Estimated Completion': 'December 2025',
+    'Cost (N/A if it is not present in article)': 'N/A',
+    'Summary': 'The new parallel taxiway aims to increase aircraft movement capacity by 20%, reducing fuel consumption and turnaround time, and improving overall efficiency at Ahmedabad Airport.',
+    'Source URL': 'https://propnewstime.com/getdetailsStories/MjI3NTA=/ahmedabad-airport-adds-new-parallel-taxiway-to-ease-congestion-and-improve-aircraft-movement',
+    'Relevance': 'Medium',
+    'Impact Summary': 'The new taxiway is expected to increase aircraft movement capacity, reduce delays, and improve overall efficiency at Ahmedabad Airport, benefiting passengers and airlines.'
   },
   {
     id: 5,
-    dateFetched: '2024-11-09',
-    datePublished: '2024-10-15',
-    airportName: 'Frankfurt Airport',
-    projectName: 'Baggage System Upgrade',
-    description: 'Modernizing baggage handling systems',
-    status: 'In Progress',
-    city: 'Frankfurt',
-    country: 'Germany',
-    estimatedCompletion: '2025-Q3',
-    cost: '€85M',
-    summary: 'Automated baggage handling',
-    sourceUrl: 'https://example.com/frankfurt',
-    relevance: 'Medium',
-    latitude: 50.0379,
-    longitude: 8.5622
+    'Date Fetched': '2025-11-10',
+    'Date Published': '2025-11-08',
+    'Airport Name': 'Navi Mumbai International Airport',
+    'Project Name': 'Navi Mumbai International Airport Development',
+    'Description': 'The project includes the development of a new international airport with multiple medical centers, emergency medical support, and disaster-management facilities.',
+    'Status': 'In Progress',
+    'City': 'Navi Mumbai',
+    'Country': 'India',
+    'Estimated Completion': 'Not specified',
+    'Cost (N/A if it is not present in article)': 'N/A',
+    'Summary': 'The Navi Mumbai International Airport is being developed as a major new hub for the Mumbai metropolitan region, with Apollo Hospitals providing 24x7 healthcare services.',
+    'Source URL': 'https://propnewstime.com/getdetailsStories/MjI3MjM=/apollo-hospitals-to-provide-24x7-healthcare-services-at-navi-mumbai-international-airport',
+    'Relevance': 'High',
+    'Impact Summary': 'The project will improve the overall travel experience and safety of passengers at the Navi Mumbai International Airport.'
+  },
+  {
+    id: 6,
+    'Date Fetched': '2025-11-10',
+    'Date Published': '2025-11-10',
+    'Airport Name': 'Salt Lake City International Airport',
+    'Project Name': 'Concourse Expansion',
+    'Description': 'Salt Lake City International Airport opened 10 new gates and more than 8,000 ft.² of new concessions space, which will be used by Delta Air Lines and Southwest Airlines.',
+    'Status': 'Completed',
+    'City': 'Salt Lake City',
+    'Country': 'USA',
+    'Estimated Completion': 'N/A',
+    'Cost (N/A if it is not present in article)': 'N/A',
+    'Summary': 'The expansion adds new gates and concessions space to the airport, enhancing its capacity and passenger experience.',
+    'Source URL': 'https://aviationweek.com/air-transport/airports-networks/airport-updates-latest-news-global-market-wc-nov-10-2025',
+    'Relevance': 'Medium',
+    'Impact Summary': 'The expansion will increase the airport\'s capacity and improve the passenger experience for Delta Air Lines and Southwest Airlines customers.'
+  },
+  {
+    id: 7,
+    'Date Fetched': '2025-11-10',
+    'Date Published': '2025-11-10',
+    'Airport Name': 'Singapore Changi Airport',
+    'Project Name': 'First-Class Lounge Revamp',
+    'Description': 'Singapore Airlines opened a new first-class lounge at Singapore Changi Airport, which is 11% larger than the previous lounge and has a capacity for 130 passengers.',
+    'Status': 'Completed',
+    'City': 'Singapore',
+    'Country': 'Singapore',
+    'Estimated Completion': 'N/A',
+    'Cost (N/A if it is not present in article)': '$34 million',
+    'Summary': 'The new lounge is part of a larger project to revamp Singapore Airlines\' lounges at the airport, enhancing the premium passenger experience.',
+    'Source URL': 'https://aviationweek.com/air-transport/airports-networks/airport-updates-latest-news-global-market-wc-nov-10-2025',
+    'Relevance': 'Low',
+    'Impact Summary': 'The new lounge will provide an improved experience for Singapore Airlines\' first-class passengers, enhancing the airline\'s premium product.'
+  },
+  {
+    id: 8,
+    'Date Fetched': '2025-11-10',
+    'Date Published': '2025-11-10',
+    'Airport Name': 'San Francisco International Airport',
+    'Project Name': 'Cargo Facility Construction',
+    'Description': 'Skanska broke ground on a new cargo facility at San Francisco International Airport, which will include a 95,000-ft.² cargo area and 25,000 ft.² of office space.',
+    'Status': 'In Progress',
+    'City': 'San Francisco',
+    'Country': 'USA',
+    'Estimated Completion': '2028',
+    'Cost (N/A if it is not present in article)': 'N/A',
+    'Summary': 'The new cargo facility will enhance the airport\'s cargo handling capabilities and support growing demand for air cargo.',
+    'Source URL': 'https://aviationweek.com/air-transport/airports-networks/airport-updates-latest-news-global-market-wc-nov-10-2025',
+    'Relevance': 'Medium',
+    'Impact Summary': 'The new cargo facility will increase the airport\'s cargo handling capacity, supporting the growth of e-commerce and other industries reliant on air cargo.'
+  },
+  {
+    id: 9,
+    'Date Fetched': '2025-11-10',
+    'Date Published': '2025-11-10',
+    'Airport Name': 'Stuttgart Airport',
+    'Project Name': 'Security Checkpoint Reconstruction',
+    'Description': 'Stuttgart Airport started reconstructing passenger security checkpoint lanes in Terminal 3 to expand the screening lanes and prepare for state-of-the-art CT screening equipment.',
+    'Status': 'In Progress',
+    'City': 'Stuttgart',
+    'Country': 'Germany',
+    'Estimated Completion': 'March 2026',
+    'Cost (N/A if it is not present in article)': '$6 million',
+    'Summary': 'The reconstruction will enhance the airport\'s security screening capabilities and improve the passenger experience.',
+    'Source URL': 'https://aviationweek.com/air-transport/airports-networks/airport-updates-latest-news-global-market-wc-nov-10-2025',
+    'Relevance': 'Low',
+    'Impact Summary': 'The reconstructed security checkpoints will provide a more efficient and secure experience for passengers, reducing wait times and enhancing the overall airport experience.'
+  },
+  {
+    id: 10,
+    'Date Fetched': '2025-11-13',
+    'Date Published': '2025-11-11',
+    'Airport Name': 'Heathrow',
+    'Project Name': 'Heathrow Expansion',
+    'Description': 'The expansion includes the construction of a third runway, which would allow low-cost airlines to operate at the airport, increasing the range of products and services offered.',
+    'Status': 'Proposed',
+    'City': 'London',
+    'Country': 'United Kingdom',
+    'Estimated Completion': '2035',
+    'Cost (N/A if it is not present in article)': '£49 billion',
+    'Summary': 'Heathrow\'s expansion plan aims to increase capacity and attract low-cost airlines, with the potential to create growth and benefit passengers in the region.',
+    'Source URL': 'https://www.flightglobal.com/airlines/enlarged-heathrow-would-open-door-to-low-cost-airlines/165249.article',
+    'Relevance': 'High',
+    'Impact Summary': 'The expansion of Heathrow would increase capacity, attract low-cost airlines, and create growth, benefiting passengers in the region.'
+  },
+  {
+    id: 11,
+    'Date Fetched': '2025-11-13',
+    'Date Published': '2025-11-12',
+    'Airport Name': 'Pittsburgh International Airport',
+    'Project Name': 'Landside Terminal',
+    'Description': 'A new $1.7 billion landside terminal to better accommodate origin and destination passengers, featuring a streamlined security experience, reduced baggage delivery times, and increased parking capacity.',
+    'Status': 'Completed',
+    'City': 'Pittsburgh',
+    'Country': 'USA',
+    'Estimated Completion': 'November 18, 2025',
+    'Cost (N/A if it is not present in article)': '$1.7 billion',
+    'Summary': 'Pittsburgh International Airport\'s new landside terminal aims to improve the passenger experience and increase capacity to handle up to 15 million annual passengers.',
+    'Source URL': 'https://aviationweek.com/air-transport/airports-networks/pittsburgh-international-ready-open-17-billion-landside-terminal',
+    'Relevance': 'High',
+    'Impact Summary': 'The new terminal is expected to reduce baggage delivery times, streamline the security experience, and increase the airport\'s capacity to handle more passengers.'
+  },
+  {
+    id: 12,
+    'Date Fetched': '2025-11-14',
+    'Date Published': '2025-11-13',
+    'Airport Name': 'Sydney Airport',
+    'Project Name': 'Sydney Airport Terminal Expansion and Capital Works Program',
+    'Description': 'A $6 billion five-year capital works program to enhance capacity, improve efficiency, and elevate the passenger experience, including a landmark terminal upgrade project linking T2 and T3 domestic terminals.',
+    'Status': 'Planned',
+    'City': 'Sydney',
+    'Country': 'Australia',
+    'Estimated Completion': '2045',
+    'Cost (N/A if it is not present in article)': '$6 billion',
+    'Summary': 'Sydney Airport\'s capital works program aims to enhance capacity, improve efficiency, and elevate the passenger experience through major upgrades and a landmark terminal upgrade project.',
+    'Source URL': 'https://travelweekly.com.au/sydney-airport-launches-global-tender-to-support-6b-five-year-capital-works-program/',
+    'Relevance': 'High',
+    'Impact Summary': 'The project will improve connectivity between terminals, unlock capacity, and support future growth, enhancing the overall passenger experience and efficiency for airlines.'
+  },
+  {
+    id: 13,
+    'Date Fetched': '2025-11-15',
+    'Date Published': '2025-11-15',
+    'Airport Name': 'Watertown International Airport',
+    'Project Name': 'New Terminal Construction',
+    'Description': 'The project includes a new 25,000 square foot terminal with an updated baggage carousel, more seating, and a new passenger jet bridge. Phase two of the project will turn the old terminal into a restaurant and improve the parking lot.',
+    'Status': 'Completed',
+    'City': 'Watertown',
+    'Country': 'USA',
+    'Estimated Completion': 'November 2025',
+    'Cost (N/A if it is not present in article)': '$28 million',
+    'Summary': 'The new terminal at Watertown International Airport has been completed, providing improved facilities for passengers. The project was supported by a state grant and will also include the redevelopment of the old terminal into a restaurant and parking lot improvements.',
+    'Source URL': 'https://www.northcountrypublicradio.org/news/story/52647/20251115/watertown-airport-s-new-terminal-completed',
+    'Relevance': 'Medium',
+    'Impact Summary': 'The new terminal will improve the travel experience for passengers, providing a more comfortable and efficient environment.'
   }
 ];
 
@@ -103,21 +234,36 @@ export default function Home() {
   const [selectedStatus, setSelectedStatus] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
   const [data] = useState(sampleData);
+  const [expandedId, setExpandedId] = useState(null);
 
   const getStatusColor = (status) => {
-    switch(status) {
-      case 'Completed': return 'bg-green-100 text-green-800';
-      case 'In Progress': return 'bg-blue-100 text-blue-800';
-      case 'Planning': return 'bg-yellow-100 text-yellow-800';
+    const normalized = status?.toLowerCase();
+    switch(normalized) {
+      case 'completed': return 'bg-green-100 text-green-800';
+      case 'in progress': return 'bg-blue-100 text-blue-800';
+      case 'planned': return 'bg-purple-100 text-purple-800';
+      case 'proposed': return 'bg-yellow-100 text-yellow-800';
       default: return 'bg-gray-100 text-gray-800';
     }
   };
 
+  const getRelevanceColor = (relevance) => {
+    const normalized = relevance?.toLowerCase();
+    switch(normalized) {
+      case 'high': return 'bg-red-100 text-red-800 border-red-200';
+      case 'medium': return 'bg-orange-100 text-orange-800 border-orange-200';
+      case 'low': return 'bg-gray-100 text-gray-800 border-gray-200';
+      default: return 'bg-gray-100 text-gray-800 border-gray-200';
+    }
+  };
+
   const getStatusEmoji = (status) => {
-    switch(status) {
-      case 'Completed': return '🟢';
-      case 'In Progress': return '🔵';
-      case 'Planning': return '🟡';
+    const normalized = status?.toLowerCase();
+    switch(normalized) {
+      case 'completed': return '🟢';
+      case 'in progress': return '🔵';
+      case 'planned': return '🟣';
+      case 'proposed': return '🟡';
       default: return '⚪';
     }
   };
@@ -125,8 +271,8 @@ export default function Home() {
   // Filter data
   const filteredData = useMemo(() => {
     return data.filter(project => {
-      const matchesCountry = selectedCountry === 'All' || project.country === selectedCountry;
-      const matchesStatus = selectedStatus === 'All' || project.status === selectedStatus;
+      const matchesCountry = selectedCountry === 'All' || project['Country'] === selectedCountry;
+      const matchesStatus = selectedStatus === 'All' || project['Status'] === selectedStatus;
       const matchesSearch = searchTerm === '' || 
         Object.values(project).some(val => 
           String(val).toLowerCase().includes(searchTerm.toLowerCase())
@@ -135,19 +281,19 @@ export default function Home() {
     });
   }, [data, selectedCountry, selectedStatus, searchTerm]);
 
-  const countries = useMemo(() => ['All', ...new Set(data.map(p => p.country))], [data]);
-  const statuses = useMemo(() => ['All', ...new Set(data.map(p => p.status))], [data]);
+  const countries = useMemo(() => ['All', ...new Set(data.map(p => p['Country']))], [data]);
+  const statuses = useMemo(() => ['All', ...new Set(data.map(p => p['Status']))], [data]);
 
   const statusCounts = useMemo(() => {
     return filteredData.reduce((acc, project) => {
-      acc[project.status] = (acc[project.status] || 0) + 1;
+      acc[project['Status']] = (acc[project['Status']] || 0) + 1;
       return acc;
     }, {});
   }, [filteredData]);
 
   const countryCounts = useMemo(() => {
     return filteredData.reduce((acc, project) => {
-      acc[project.country] = (acc[project.country] || 0) + 1;
+      acc[project['Country']] = (acc[project['Country']] || 0) + 1;
       return acc;
     }, {});
   }, [filteredData]);
@@ -273,11 +419,11 @@ export default function Home() {
           </div>
 
           <div className="p-6">
-            {/* Data Table Tab */}
+            {/* Data Table Tab - Card List View */}
             {activeTab === 'table' && (
               <div>
-                <div className="flex justify-between items-center mb-4">
-                  <h2 className="text-xl font-semibold text-gray-900">Data Table</h2>
+                <div className="flex justify-between items-center mb-6">
+                  <h2 className="text-xl font-semibold text-gray-900">Projects List</h2>
                   <button 
                     onClick={downloadCSV}
                     className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
@@ -287,36 +433,132 @@ export default function Home() {
                   </button>
                 </div>
 
-                <div className="overflow-x-auto">
-                  <table className="w-full border-collapse">
-                    <thead>
-                      <tr className="bg-gray-50">
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border-b">Airport Name</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border-b">Project Name</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border-b">City</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border-b">Country</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border-b">Status</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border-b">Est. Completion</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {filteredData.map((project, index) => (
-                        <tr key={project.id} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                          <td className="px-4 py-3 text-sm text-gray-900 border-b">{project.airportName}</td>
-                          <td className="px-4 py-3 text-sm text-gray-900 border-b">{project.projectName}</td>
-                          <td className="px-4 py-3 text-sm text-gray-900 border-b">{project.city}</td>
-                          <td className="px-4 py-3 text-sm text-gray-900 border-b">{project.country}</td>
-                          <td className="px-4 py-3 text-sm border-b">
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
-                              {project.status}
-                            </span>
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900 border-b">{project.estimatedCompletion}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                <div className="space-y-4">
+                  {filteredData.map((project) => (
+                    <div 
+                      key={project.id} 
+                      className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                    >
+                      {/* Card Header - Always Visible */}
+                      <div 
+                        onClick={() => setExpandedId(expandedId === project.id ? null : project.id)}
+                        className="p-5 cursor-pointer hover:bg-gray-50 transition-colors"
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-start gap-3 mb-3">
+                              <div className="flex-1">
+                                <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                                  {project['Airport Name']}
+                                </h3>
+                                <p className="text-base text-blue-600 font-medium">
+                                  {project['Project Name']}
+                                </p>
+                              </div>
+                              <div className="flex items-center gap-2 flex-shrink-0">
+                                <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${getRelevanceColor(project['Relevance'])}`}>
+                                  {project['Relevance']}
+                                </span>
+                                <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(project['Status'])}`}>
+                                  {project['Status']}
+                                </span>
+                              </div>
+                            </div>
+
+                            <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                              {project['Description']}
+                            </p>
+
+                            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+                              <div className="flex items-center gap-1">
+                                <span className="font-medium">💰</span>
+                                <span className="font-semibold text-gray-900">{project['Cost (N/A if it is not present in article)']}</span>
+                              </div>
+                              <div className="flex items-center gap-1">
+                                <span className="font-medium">🌍</span>
+                                <span>{project['Country']}</span>
+                              </div>
+                              <div className="flex items-center gap-1">
+                                <span className="font-medium">📅</span>
+                                <span>{project['Date Fetched']}</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Expand/Collapse Icon */}
+                          <div className="flex-shrink-0 pt-1">
+                            <svg 
+                              className={`w-5 h-5 text-gray-400 transition-transform ${expandedId === project.id ? 'rotate-180' : ''}`}
+                              fill="none" 
+                              stroke="currentColor" 
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Expanded Details */}
+                      {expandedId === project.id && (
+                        <div className="border-t border-gray-200 bg-gray-50 p-5">
+                          <div className="grid grid-cols-2 gap-6">
+                            <div>
+                              <h4 className="text-sm font-semibold text-gray-700 mb-3">Project Details</h4>
+                              <div className="space-y-2">
+                                <div>
+                                  <p className="text-xs text-gray-500">City</p>
+                                  <p className="text-sm text-gray-900">{project['City']}</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-gray-500">Estimated Completion</p>
+                                  <p className="text-sm text-gray-900">{project['Estimated Completion']}</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-gray-500">Date Published</p>
+                                  <p className="text-sm text-gray-900">{project['Date Published']}</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div>
+                              <h4 className="text-sm font-semibold text-gray-700 mb-3">Summary</h4>
+                              <p className="text-sm text-gray-700 mb-4">
+                                {project['Summary']}
+                              </p>
+                              <div>
+                                <p className="text-xs text-gray-500 mb-1">Impact</p>
+                                <p className="text-sm text-gray-900">
+                                  {project['Impact Summary']}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="mt-4 pt-4 border-t border-gray-200">
+                            <a 
+                              href={project['Source URL']} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 font-medium"
+                            >
+                              <span>View Source</span>
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
+
+                {filteredData.length === 0 && (
+                  <div className="text-center py-12 bg-gray-50 rounded-lg">
+                    <p className="text-gray-500">No projects found matching your filters.</p>
+                  </div>
+                )}
               </div>
             )}
 
@@ -334,19 +576,19 @@ export default function Home() {
                   <div className="bg-green-50 rounded-lg p-4 border border-green-200">
                     <p className="text-sm text-green-600 font-medium">Countries</p>
                     <p className="text-3xl font-bold text-green-900 mt-2">
-                      {new Set(filteredData.map(p => p.country)).size}
+                      {new Set(filteredData.map(p => p['Country'])).size}
                     </p>
                   </div>
                   <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
                     <p className="text-sm text-purple-600 font-medium">Airports</p>
                     <p className="text-3xl font-bold text-purple-900 mt-2">
-                      {new Set(filteredData.map(p => p.airportName)).size}
+                      {new Set(filteredData.map(p => p['Airport Name'])).size}
                     </p>
                   </div>
                   <div className="bg-orange-50 rounded-lg p-4 border border-orange-200">
                     <p className="text-sm text-orange-600 font-medium">Status Types</p>
                     <p className="text-3xl font-bold text-orange-900 mt-2">
-                      {new Set(filteredData.map(p => p.status)).size}
+                      {new Set(filteredData.map(p => p['Status'])).size}
                     </p>
                   </div>
                 </div>
