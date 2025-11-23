@@ -4,7 +4,7 @@
 
 ![Airport Projects Dashboard](https://img.shields.io/badge/Status-Live-brightgreen) ![Data Coverage](https://img.shields.io/badge/Projects-Global-blue) ![Updates](https://img.shields.io/badge/Updates-Daily-orange)
 
-**Live Demo:** [airportprojectsdirectory.amygdalabs.com](https://airportprojectsdirectory.amygdalabs.com)
+**Live Demo:** [[airportprojectsdirectory.amygdalabs.com](https://airportprojectsdirectory.amygdalabs.com)](https://airport-projects-dashboard.vercel.app/)
 
 ---
 
